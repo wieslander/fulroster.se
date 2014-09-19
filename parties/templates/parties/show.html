@@ -1,5 +1,11 @@
 {% extends "fulroster/base.html" %}
 
+{% block subtitle %}{{ party.name }} - {% endblock %}
+
+{% block opengraph %}
+<meta property="og:title" content="{{ party.name }}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
   <div class="party-header">
