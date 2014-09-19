@@ -1,0 +1,150 @@
+/*****************************************************************************
+ * Site layout                                                               *
+ *****************************************************************************/
+
+/* Space out content a bit */
+body {
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+}
+
+
+/*****************************************************************************
+ * Front page                                                                *
+ *****************************************************************************/
+
+.ballot {
+    background-color: #ffd;
+    border: 1px solid #eec;
+    padding: 50px;
+    position: relative;
+}
+
+.ballot::before,
+.ballot::after {
+    position: absolute;
+    top: 50%;
+    height: 90px;
+    margin-top: -45px;
+    content: "=";
+    font-size: 63px;
+    font-weight: bold;
+}
+
+.ballot::before {
+    left: 0;
+}
+
+.ballot::after {
+    right: 0;
+}
+
+.ballot h2, .ballot h3 {
+    text-align: center;
+}
+
+.ballot h2 {
+    margin-top: 0;
+    font-size: 63px;
+}
+
+.front-page .alert {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+
+/*****************************************************************************
+ * Party list                                                                *
+ *****************************************************************************/
+
+.parties a.party {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.parties-compact {
+    font-size: 0.8em;
+}
+
+.parties-compact a.party {
+    font-weight: normal;
+}
+
+
+/*****************************************************************************
+ * Party details                                                             *
+ *****************************************************************************/
+
+.party-header h2 {
+    border-bottom: 1px solid #ccc;
+}
+
+.party-info {
+    position: relative;
+    padding-left: 75px;
+}
+
+.party-info .counter {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+
+/*****************************************************************************
+ * Utilities                                                                 *
+ *****************************************************************************/
+
+.table td.expanded {
+    width: 100%;
+}
+
+.counter .count {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #999;
+}
+
+.counter .counter-label {
+    font-size: 0.8em;
+    color: #666;
+    text-align: center;
+}

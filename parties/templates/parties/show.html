@@ -1,0 +1,59 @@
+{% extends "fulroster/base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="party-header">
+    <h2>{{ party.name }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-8 party-info">
+      {% include "parties/_view_counter.html" with party=party %}
+      <h3>Röster</h3>
+      <table class="table party-votes">
+        <tr>
+          <th>Riksdagen</th>
+          <th>Landsting</th>
+          <th>Kommuner</th>
+          <th>Totalt</th>
+        </tr>
+        <tr>
+          <td>
+            {{ stats.votes_by_type.R }}
+            röst{{ stats.votes_by_type.R|pluralize:"er" }}
+          </td>
+          <td>
+            {{ stats.votes_by_type.L }}
+            röst{{ stats.votes_by_type.L|pluralize:"er" }}
+          </td>
+          <td>
+            {{ stats.votes_by_type.K }}
+            röst{{ stats.votes_by_type.K|pluralize:"er" }}
+          </td>
+          <td>
+            {{ stats.total_votes }}
+            röst{{ stats.total_votes|pluralize:"er" }}
+          </td>
+        </tr>
+      </table>
+      <h3>Var kommer rösterna ifrån?</h3>
+      <table class="table">
+        {% for municipality, vote_count in stats.votes_by_municipality %}
+        <tr>
+          <th>{{ municipality }}</th>
+          <td class="expanded">{{ vote_count }} röst{{ vote_count|pluralize:"er" }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="col-md-4">
+      <h3>Liknande partier</h3>
+      {% if similar_parties %}
+        <table class="table parties parties-compact">
+          {% include "parties/_partylist.html" with parties=similar_parties %}
+        </table>
+      {% else %}
+        <p class="text-muted">Inga liknande partier</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

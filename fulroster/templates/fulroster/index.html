@@ -1,0 +1,34 @@
+{% extends "fulroster/base.html" %}
+
+{% block content %}
+  <div class="container front-page">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="ballot">
+          <h2>Fulröster!</h2>
+          <h3>
+            Hitta guldkornen bland handskrivna valsedlar från valen 2014.
+          </h3>
+        </div>
+        <div class="alert alert-info">
+          <p>
+            På fulröster.se hittar du alla handskrivna röster på ej
+            registrerade partier från valen 2014 till riksdag, landsting
+            och kommuner.
+          </p>
+          <p>
+            Rösterna hämtas direkt från
+            <a href="http://www.val.se/">Valmyndigheten</a> allt eftersom de
+            rapporteras in.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Populärast på fulröster.se</h3>
+        <table class="table parties parties-compact">
+          {% include "parties/_partylist.html" with parties=popular_parties %}
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% for party in parties %}
+  <tr>
+    <td>
+      {% include "parties/_view_counter.html" with party=party %}
+    </td>
+    <td>
+      <div class="counter">
+        <div class="count">{{ party.total_votes }}</div>
+        <div class="counter-label">valsedlar</div>
+      </div>
+    </td>
+    <td><a class="party" href="{% url 'parties:show' party.pk party.slug %}">{{ party.name }}</a></td>
+  </tr>
+{% endfor %}

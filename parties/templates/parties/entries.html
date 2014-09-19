@@ -1,0 +1,10 @@
+{% extends "fulroster/base.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>Partier</h2>
+  <table class="table parties">
+    {% include "parties/_partylist.html" %}
+  </table>
+</div>
+{% endblock %}

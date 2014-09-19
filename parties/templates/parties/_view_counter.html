@@ -1,0 +1,6 @@
+{% load roundnumbers %}
+
+<div class="counter">
+  <div class="count">{{ party.views|round }}</div>
+  <div class="counter-label">visning{{ party.views|pluralize:"ar" }}</div>
+</div>
