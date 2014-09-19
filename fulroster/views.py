@@ -8,3 +8,6 @@ def index(request):
     popular_parties = Party.most_popular(10)
     context = {'popular_parties': popular_parties}
     return render(request, 'fulroster/index.html', context)
+
+def about(request):
+    return render(request, 'fulroster/about.html')
