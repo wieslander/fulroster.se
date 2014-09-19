@@ -28,6 +28,7 @@
         <table class="table parties parties-compact">
           {% include "parties/_partylist.html" with parties=popular_parties %}
         </table>
+        <a class="btn btn-success" href="{% url 'parties:entries' %}">Visa alla partier</a>
       </div>
     </div>
   </div>
